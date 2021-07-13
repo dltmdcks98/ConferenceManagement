@@ -1,4 +1,4 @@
-package com.example.conferencemanagement;
+    package com.example.conferencemanagement;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -16,12 +17,16 @@ public class MainActivity extends AppCompatActivity {
     Fragment fragment_home;
     Fragment fragment_plan;
     Fragment fragment_calendar;
-
+    Button btnMake,btnAttend;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        btnMake = (Button)findViewById(R.id.btnMake);
+        btnAttend = (Button)findViewById(R.id.btnAttend);
+
 
         fragment_team_leader = new teamLeader_Fragment();
         fragment_team_Member = new teamMember_Fragment();

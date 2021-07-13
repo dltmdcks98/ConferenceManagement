@@ -12,14 +12,41 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
         android:layout_weight="1">
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="헤더 플레너"
+            android:textSize="50dp"/>
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:layout_weight="1">
-    </LinearLayout>
+        <Button
+            android:id="@+id/btnMake"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="방 만들기"
+            />
+        <Button
+            android:id="@+id/btnAttend"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="방 찾기 "
+            />
+
+    </RelativeLayout>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -27,6 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:visibility="invisible"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/menu_bottom" />
 
