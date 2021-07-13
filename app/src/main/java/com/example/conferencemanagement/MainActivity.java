@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -26,7 +27,12 @@ public class MainActivity extends AppCompatActivity {
 
         btnMake = (Button)findViewById(R.id.btnMake);
         btnAttend = (Button)findViewById(R.id.btnAttend);
+        btnMake.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
 
         fragment_team_leader = new teamLeader_Fragment();
         fragment_team_Member = new teamMember_Fragment();
