@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home_Fragment">
 
     <LinearLayout
@@ -35,7 +36,7 @@
             android:text="프로젝트 : " />
 
         <EditText
-
+            android:id="@+id/edit_projectName"
             android:layout_width="291dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -50,13 +51,11 @@
         android:layout_height="355dp"
         android:layout_marginTop="350dp"
         android:layout_weight="1"
-        android:orientation="vertical"
-
-        >
+        android:orientation="vertical">
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="678dp"
+            android:layout_height="270dp"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:stretchColumns="*">
@@ -116,24 +115,26 @@
                     android:text="1"
                     android:textSize="20sp" />
 
-                <TextView
+                <EditText
+                    android:id="@+id/edit_firstName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="1dp"
                     android:background="#ffffff"
                     android:fontFamily="@font/tway_air"
                     android:gravity="center_horizontal"
-                    android:text="박종호"
+                    android:hint="이름"
                     android:textSize="20sp" />
 
-                <TextView
+                <EditText
+                    android:id="@+id/edit_firstRole"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="1dp"
                     android:background="#ffffff"
                     android:fontFamily="@font/tway_air"
                     android:gravity="center_horizontal"
-                    android:text="팀장"
+                    android:hint="팀장/원"
                     android:textSize="20sp" />
 
 
@@ -155,24 +156,26 @@
                     android:text="2"
                     android:textSize="20sp" />
 
-                <TextView
+                <EditText
+                    android:id="@+id/edit_secondName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="1dp"
                     android:background="#ffffff"
                     android:fontFamily="@font/tway_air"
                     android:gravity="center_horizontal"
-                    android:text="박기환"
+                    android:hint="이름"
                     android:textSize="20sp" />
 
-                <TextView
+                <EditText
+                    android:id="@+id/edit_secondRole"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="1dp"
                     android:background="#ffffff"
                     android:fontFamily="@font/tway_air"
                     android:gravity="center_horizontal"
-                    android:text="팀원"
+                    android:hint="팀장/원"
                     android:textSize="20sp" />
 
 
@@ -194,26 +197,27 @@
                     android:text="3"
                     android:textSize="20sp" />
 
-                <TextView
+                <EditText
+                    android:id="@+id/edit_thirdName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="1dp"
                     android:background="#ffffff"
                     android:fontFamily="@font/tway_air"
                     android:gravity="center_horizontal"
-                    android:text="양형준"
+                    android:hint="이름"
                     android:textSize="20sp" />
 
-                <TextView
+                <EditText
+                    android:id="@+id/edit_thirdRole"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="1dp"
                     android:background="#ffffff"
                     android:fontFamily="@font/tway_air"
                     android:gravity="center_horizontal"
-                    android:text="팀원"
+                    android:hint="팀장/원"
                     android:textSize="20sp" />
-
 
             </TableRow>
 
@@ -233,29 +237,54 @@
                     android:text="4"
                     android:textSize="20sp" />
 
-                <TextView
+                <EditText
+                    android:id="@+id/edit_fourthName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="1dp"
                     android:background="#ffffff"
                     android:fontFamily="@font/tway_air"
                     android:gravity="center_horizontal"
-                    android:text="이승찬"
+                    android:hint="이름"
                     android:textSize="20sp" />
 
-                <TextView
+                <EditText
+                    android:id="@+id/edit_fourthRole"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="1dp"
                     android:background="#ffffff"
                     android:fontFamily="@font/tway_air"
                     android:gravity="center_horizontal"
-                    android:text="팀원"
+                    android:hint="팀장/원"
                     android:textSize="20sp" />
-
 
             </TableRow>
         </TableLayout>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_homeSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="600dp"
+        android:background="@drawable/button_design"
+        android:backgroundTint="#C9CDF1"
+        android:text="저장"
+        android:textColor="@color/black"
+        android:textStyle="normal"
+        app:backgroundTint ="@null"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn"/>
+
+
 
 </FrameLayout>
