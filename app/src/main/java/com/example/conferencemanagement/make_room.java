@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 public class make_room extends Activity {
     EditText roomCode,roomName;
     Button ranbomCode,btnSave;
-
+    int Code;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,14 +26,14 @@ public class make_room extends Activity {
         ranbomCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                Code = (int)(Math.random() * (99999 - 10000 + 1)) + 10000;
             }
         });
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //DB에 저장
             }
         });
 
