@@ -17,7 +17,7 @@
             android:text="방 만들기"
             android:textSize="50dp"/>
     </LinearLayout>
-
+<!--https://lcw126.tistory.com/282-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
