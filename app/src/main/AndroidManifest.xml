@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".entry_room"/>
+        <activity android:name=".make_room"/>
     </application>
 
 </manifest>

@@ -6,13 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
 public class make_room extends Activity {
     EditText roomCode,roomName;
     Button ranbomCode,btnSave;
-    int Code;
+    String Code;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,14 +27,22 @@ public class make_room extends Activity {
         ranbomCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Code = (int)(Math.random() * (99999 - 10000 + 1)) + 10000;
+                Code = String.valueOf((int)(Math.random() * (99999 - 10000 + 1)) + 10000);
+                roomCode.setText(Code);
             }
         });
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //DB에 저장
+                if(roomCode==null){
+
+                }else if(roomName==null){
+
+                }else {
+                    //DB에 저장
+                }
+
             }
         });
 
