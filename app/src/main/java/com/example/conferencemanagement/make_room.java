@@ -35,12 +35,13 @@ public class make_room extends Activity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(roomCode==null){
-
-                }else if(roomName==null){
-
+                if(roomCode.getText().toString().equals("")){
+                    Toast.makeText(make_room.this,"code가 비였습니다.",Toast.LENGTH_SHORT).show();
+                }else if(roomName.getText().toString().equals("")){
+                    Toast.makeText(make_room.this,"name이 비었습니다.",Toast.LENGTH_SHORT).show();
                 }else {
                     //DB에 저장
+                    Toast.makeText(make_room.this,"저장.",Toast.LENGTH_SHORT).show();
                 }
 
             }
