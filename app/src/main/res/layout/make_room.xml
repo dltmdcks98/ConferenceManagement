@@ -1,58 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:layout_weight="1">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="방 만들기"
-            android:textSize="50dp"/>
+            android:textSize="50dp" />
     </LinearLayout>
-<!--https://lcw126.tistory.com/282-->
+    <!--https://lcw126.tistory.com/282-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
+
         <EditText
             android:id="@+id/roomName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
-            android:hint="방 이름"/>
+            android:layout_centerHorizontal="true"
+            android:hint="방 이름" />
+
         <EditText
             android:id="@+id/roomCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:hint="코드 "/>
+            android:hint="코드 " />
+
         <Button
             android:id="@+id/ranbomCode"
+            app:backgroundTint="@null"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/roomCode"
             android:layout_alignRight="@+id/roomCode"
-            android:text="코드 랜덤 생성" />
+            android:background="@drawable/button_design"
+            android:backgroundTint="#C9CDF1"
+            android:text="코드 랜덤 생성"
+            android:textColor="@color/black"/>
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
+
         <Button
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="저장"/>
+            android:background="@drawable/button_design"
+            android:backgroundTint="#C9CDF1"
+            app:backgroundTint ="@null"
+            android:textColor="@color/black"
+            android:text="저장" />
     </LinearLayout>
 </LinearLayout>

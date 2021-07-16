@@ -271,10 +271,11 @@
         android:layout_marginTop="600dp"
         android:background="@drawable/button_design"
         android:backgroundTint="#C9CDF1"
+        app:backgroundTint ="@null"
         android:text="저장"
         android:textColor="@color/black"
         android:textStyle="normal"
-        app:backgroundTint ="@null"/>
+        />
 
     <TextView
         android:layout_width="wrap_content"
