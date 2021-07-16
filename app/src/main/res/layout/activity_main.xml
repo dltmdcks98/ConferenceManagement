@@ -32,17 +32,25 @@
             android:id="@+id/btnMake"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_design"
+            android:backgroundTint="#C9CDF1"
+            app:backgroundTint ="@null"
+            android:textColor="@color/black"
             android:text="방 만들기"
             />
         <Button
             android:id="@+id/btnAttend"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_design"
+            android:backgroundTint="#C9CDF1"
+            app:backgroundTint ="@null"
+            android:textColor="@color/black"
             android:text="방 찾기 "
             />
 
