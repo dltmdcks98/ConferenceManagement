@@ -62,7 +62,8 @@ public class home_Fragment extends Fragment {
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 teamLeader_Fragment teamLeader_fragment = new teamLeader_Fragment();
                 teamLeader_fragment.setArguments(bundle);
-                transaction.replace(R.id.team_Leader_fragment, teamLeader_fragment);
+                transaction.add(R.id.container, teamLeader_fragment);
+                transaction.replace(R.id.container, teamLeader_fragment);
                 transaction.commit();
 
 
