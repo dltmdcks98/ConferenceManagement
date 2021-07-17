@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home_Fragment">
 
     <LinearLayout
@@ -16,7 +17,6 @@
             android:layout_marginLeft="180dp"
             android:layout_marginTop="150dp"
             android:fontFamily="@font/tway_air"
-
             android:text="홈"
             android:textColor="@color/black"
             android:textSize="40sp" />
@@ -271,20 +271,21 @@
         android:layout_marginTop="600dp"
         android:background="@drawable/button_design"
         android:backgroundTint="#C9CDF1"
-        android:text="저장"
+        android:fontFamily="@font/tway_air"
         android:textColor="@color/black"
-        android:textStyle="normal"
-        app:backgroundTint ="@null"/>
+        app:backgroundTint="@null"
+        android:text="저장"
+        />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn"/>
+        android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 
 </FrameLayout>
