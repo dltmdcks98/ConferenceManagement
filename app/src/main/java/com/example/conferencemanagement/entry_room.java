@@ -30,6 +30,7 @@ public class entry_room extends AppCompatActivity {
 
 
 
+
 //https://stackoverflow.com/questions/33849446/searchview-show-result-from-database-to-listview -> DB랑 searchview연결하는거
 
 //        searchView.setOnQueryTextFocusChangeListener(new SearchView.OnQueryTextListener(){

@@ -56,7 +56,7 @@
             android:id="@+id/image_user"
             android:layout_width="67dp"
             android:layout_height="67dp"
-            android:src="@drawable/user_icon" />
+            tools:src="@tools:sample/avatars" />
         <Gallery
             android:id="@+id/gallery1"
             android:layout_width="match_parent"
