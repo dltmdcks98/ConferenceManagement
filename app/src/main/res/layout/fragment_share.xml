@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".share_Fragment">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="150dp"
+            android:fontFamily="@font/tway_air"
+            android:text="홈"
+            android:textColor="@color/black"
+            android:textSize="40sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="210dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:src="@drawable/user_icon" />
+        <Gallery
+            android:id="@+id/gallery1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:spacing="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="280dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/member_name1"
+        android:text="양형준"
+        android:textSize="20dp"
+        android:fontFamily="@font/tway_air"
+        android:layout_marginLeft="7dp"/>
+
+    <ProgressBar
+        android:id="@+id/progress1"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:progress="100" />
+        <EditText
+            android:id="@+id/progress_edit1"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/button_design"
+            android:text=" 78%"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="310dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:src="@drawable/user_icon" />
+        <Gallery
+            android:id="@+id/gallery2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:spacing="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="370dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/member_name2"
+            android:text="이승찬"
+            android:textSize="20dp"
+            android:fontFamily="@font/tway_air"
+            android:layout_marginLeft="7dp"/>
+
+        <ProgressBar
+            android:id="@+id/progress2"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:progress="100" />
+        <EditText
+            android:id="@+id/progress_edit2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/button_design"
+            android:text=" 78%"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="400dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:src="@drawable/user_icon" />
+        <Gallery
+            android:id="@+id/gallery3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:spacing="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="460dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/member_name3"
+            android:text="박종호"
+            android:textSize="20dp"
+            android:fontFamily="@font/tway_air"
+            android:layout_marginLeft="7dp"/>
+
+        <ProgressBar
+            android:id="@+id/progress3"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:progress="100" />
+        <EditText
+            android:id="@+id/progress_edit3"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/button_design"
+            android:text=" 78%"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="490dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:src="@drawable/user_icon" />
+        <Gallery
+            android:id="@+id/gallery4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:spacing="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="550dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/member_name4"
+            android:text="박기환"
+            android:textSize="20dp"
+            android:fontFamily="@font/tway_air"
+            android:layout_marginLeft="7dp"/>
+
+        <ProgressBar
+            android:id="@+id/progress4"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:progress="100" />
+        <EditText
+            android:id="@+id/progress_edit4"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/button_design"
+            android:text=" 78%"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+
+</FrameLayout>
