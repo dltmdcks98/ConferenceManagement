@@ -13,9 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import static android.widget.SearchView.*;
 
 public class entry_room extends AppCompatActivity {
-    EditText name;
+    EditText name,searchView;
     Button confirm;
-    SearchView searchView;
+   // SearchView searchView;
 
 
     @Override
@@ -24,8 +24,11 @@ public class entry_room extends AppCompatActivity {
         setContentView(R.layout.entry_room);
 
         name = (EditText)findViewById(R.id.name);
-        searchView = (SearchView)findViewById(R.id.search);
+        //searchView = (SearchView)findViewById(R.id.search);
         confirm = (Button)findViewById(R.id.confirm);
+        searchView = (EditText)findViewById(R.id.search);
+
+
 
 //https://stackoverflow.com/questions/33849446/searchview-show-result-from-database-to-listview -> DB랑 searchview연결하는거
 
@@ -43,5 +46,6 @@ public class entry_room extends AppCompatActivity {
 //            }
 //
 //        });
+
     }
 }

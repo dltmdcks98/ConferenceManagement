@@ -33,19 +33,26 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="30dp"
             android:fontFamily="@font/tway_air"
-
             android:hint="닉네임"/>
-        <SearchView
-            android:id="@+id/search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:iconifiedByDefault="false"
-            android:fontFamily="@font/tway_air"
 
-            android:queryHint="코드 검색"
-            />
+<!--        <SearchView-->
+<!--            android:id="@+id/search"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:iconifiedByDefault="false"-->
+<!--            android:fontFamily="@font/tway_air"-->
+
+<!--            android:queryHint="코드 검색"-->
+<!--            />-->
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:hint="코드 검색"/>
     </RelativeLayout>
 
     <LinearLayout
