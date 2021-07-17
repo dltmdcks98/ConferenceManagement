@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,42 +51,27 @@ public class home_Fragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                sql = testDB.getWritableDatabase();
-
-                sql.execSQL("INSERT INTO member VALUES(null,'" +
-                        edit_firstName.getText() + "','" + edit_firstRole.getText() +
-                        edit_secondName.getText() + "','" + edit_secondRole.getText() +
-                        edit_thirdName.getText() + "','" + edit_thirdRole.getText() +
-                        edit_fourthName.getText() + "','" + edit_fourthRole.getText() + "');"
-                );
 
 
-                sql.close();
+                Bundle bundle = new Bundle();
+                bundle.putString("first_name", edit_firstName.getText().toString());
+                bundle.putString("second_name", edit_secondName.getText().toString());
+                bundle.putString("third_name", edit_thirdName.getText().toString());
+                bundle.putString("fourth_name", edit_fourthName.getText().toString());
+
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                teamLeader_Fragment teamLeader_fragment = new teamLeader_Fragment();
+                teamLeader_fragment.setArguments(bundle);
+                transaction.add(R.id.container, teamLeader_fragment);
+                transaction.replace(R.id.container, teamLeader_fragment);
+                transaction.commit();
+
+
             }
 
         });
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sql = testDB.getReadableDatabase();
-                Cursor cursor;
-                cursor = sql.rawQuery("SELECT * FROM MEMBER;", null);
 
-                String Value2 = "Value" + "\r\n";
-
-                while (cursor.moveToNext()) {
-                    Value2 +=  cursor.getString(1) + " \t\t" + cursor.getString(2) + "\r\t"
-                            + cursor.getString(3) + "\t\t" + cursor.getString(4) + "\r\n"
-                            + cursor.getString(5) + "\t\t" + cursor.getString(6) + "\r\n"
-                            + cursor.getString(7) + "\t\t" + cursor.getString(8) + "\r\n";
-                }
-                textView.setText(Value2);
-                cursor.close();
-                sql.close();
-
-            }
-        });
 
         return v;
     }

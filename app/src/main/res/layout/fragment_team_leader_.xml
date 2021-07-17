@@ -3,7 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".teamLeader_Fragment">
+    tools:context=".teamLeader_Fragment"
+    android:id="@+id/team_Leader_fragment"
+    android:layout_gravity="center_horizontal"
+    >
+
 
     <TextView
         android:layout_width="match_parent"
@@ -18,7 +22,7 @@
     <ImageView
         android:id="@+id/imageView_profile_1"
         android:layout_width="51dp"
-        android:layout_height="68dp"
+        android:layout_height="71dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="250dp"
         android:src="@drawable/profile" />
