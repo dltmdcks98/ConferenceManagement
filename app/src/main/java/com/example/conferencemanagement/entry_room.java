@@ -20,8 +20,6 @@ import static android.widget.SearchView.*;
 public class entry_room extends AppCompatActivity {
     EditText name,searchView;
     Button confirm;
-    myDBHelper myDBHelper;
-    SQLiteDatabase sqlDB;
    // SearchView searchView;
 
 
@@ -68,20 +66,5 @@ public class entry_room extends AppCompatActivity {
 //
 //        });
 
-    }
-    public class myDBHelper extends SQLiteOpenHelper {
-        public myDBHelper(Context context){
-            super(context,"roomDB",null,1);
-        }
-        @Override
-        public void onCreate(SQLiteDatabase db) {
-            db.execSQL("CREATE TABLE roomDB ( name VARCHAR(20) PRIMARY KEY , code INTEGER);");
-        }
-
-        @Override
-        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-            db.execSQL("DROP TABLE IF EXISTS roomDB");
-            onCreate(db);
-        }
     }
 }
