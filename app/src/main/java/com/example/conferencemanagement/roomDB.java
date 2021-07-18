@@ -10,7 +10,7 @@ public class roomDB extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE roomDB ( name VARCHAR(20) PRIMARY KEY , code INTEGER );");
+        db.execSQL("CREATE TABLE roomDB ( name VARCHAR(20)  , code INTEGER PRIMARY KEY );");
     }
 
     @Override

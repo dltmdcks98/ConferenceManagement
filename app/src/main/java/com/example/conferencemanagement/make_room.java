@@ -3,6 +3,7 @@ package com.example.conferencemanagement;
 
 import android.app.Activity;
 import android.content.Context;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import androidx.annotation.Nullable;
 public class make_room extends Activity {
     roomDB myHelper;
     EditText roomCode, roomName;
-    Button ranbomCode, btnSave;
+    Button ranbomCode, btnSave, btnReset;
     String Code;
     SQLiteDatabase sqlDB;
 
@@ -30,7 +31,9 @@ public class make_room extends Activity {
         roomName = (EditText) findViewById(R.id.roomName);
         ranbomCode = (Button) findViewById(R.id.ranbomCode);
         btnSave = (Button) findViewById(R.id.btnSave);
+        btnReset = (Button)findViewById(R.id.btnReset);
 
+        myHelper = new roomDB(this);
 
         ranbomCode.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,8 +42,17 @@ public class make_room extends Activity {
                 roomCode.setText(Code);
             }
         });
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sqlDB = myHelper.getWritableDatabase();
+                myHelper.onUpgrade(sqlDB,1,2);
+                sqlDB.close();
+                Toast.makeText(make_room.this, "DB를 초기화 합니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
 
-        myHelper = new roomDB(this);
+
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,11 +63,17 @@ public class make_room extends Activity {
                 } else {
                     //DB에 저장
                     sqlDB = myHelper.getWritableDatabase();
-                    sqlDB.execSQL("INSERT INTO roomDB VALUES ( '"
-                            + roomName.getText().toString() + "' , "
-                            + roomCode.getText().toString() + ");");
+                    try {
+                        sqlDB.execSQL("INSERT INTO roomDB VALUES ( '"
+                                + roomName.getText().toString() + "' , "
+                                + roomCode.getText().toString() + ");");
+                        Toast.makeText(make_room.this, "저장.", Toast.LENGTH_SHORT).show();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                        Toast.makeText(make_room.this, "중복된 코드 입니다.", Toast.LENGTH_SHORT).show();
+                    }
                     sqlDB.close();
-                    Toast.makeText(make_room.this, "저장.", Toast.LENGTH_SHORT).show();
+
                 }
 
             }
