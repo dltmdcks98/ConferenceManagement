@@ -1,64 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
-
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1">
         <TextView
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="150dp"
-            android:fontFamily="@font/tway_air"
-            android:gravity="center"
-            android:text="헤더 플래너"
-            android:textColor="@color/black"
-            android:textSize="40sp" />
-
+            android:text="헤더 플레너"
+            android:textSize="50dp"/>
     </LinearLayout>
 
-
-
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="1">
         <Button
             android:id="@+id/btnMake"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="350dp"
             android:background="@drawable/button_design"
             android:backgroundTint="#C9CDF1"
-            android:text="방 만들기"
+            app:backgroundTint ="@null"
             android:textColor="@color/black"
-            app:backgroundTint="@null" />
-
+            android:text="방 만들기"
+            />
         <Button
             android:id="@+id/btnAttend"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
-            android:layout_gravity="center"
             android:background="@drawable/button_design"
             android:backgroundTint="#C9CDF1"
-            android:text="방 찾기 "
+            app:backgroundTint ="@null"
             android:textColor="@color/black"
-            app:backgroundTint="@null" />
+            android:text="방 찾기 "
+            />
+
+    </RelativeLayout>
 
 
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-
-        app:labelVisibilityMode="labeled"
-        app:menu="@menu/menu_bottom" />
-
-</FrameLayout>
+</LinearLayout>

@@ -1,10 +1,14 @@
 package com.example.conferencemanagement;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class room extends AppCompatActivity {
     Fragment fragment_team_leader;
@@ -26,7 +30,8 @@ public class room extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment_home).commit();
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom);
+        BottomNavigationView bottomNavigationView;
+        bottomNavigationView = findViewById(R.id.bottom);
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override

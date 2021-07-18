@@ -14,7 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 public class make_room extends Activity {
-    myDBHelper myHelper;
+    roomDB myHelper;
     EditText roomCode,roomName;
     Button ranbomCode,btnSave;
     String Code;
@@ -40,7 +40,7 @@ public class make_room extends Activity {
             }
         });
 
-        myHelper = new myDBHelper(this);
+        myHelper = new roomDB(this);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,8 +62,8 @@ public class make_room extends Activity {
         });
 
     }
-    public class myDBHelper extends SQLiteOpenHelper {
-        public myDBHelper(Context context){
+    public class roomDB extends SQLiteOpenHelper {
+        public roomDB(Context context){
             super(context,"roomDB",null,1);
         }
         @Override
