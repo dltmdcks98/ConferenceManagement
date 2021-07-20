@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home_Fragment">
 
     <LinearLayout
@@ -22,14 +22,12 @@
     </LinearLayout>
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="355dp"
         android:layout_marginTop="350dp"
         android:layout_weight="1"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -83,6 +81,7 @@
                 android:padding="1dp">
 
                 <EditText
+                    android:id="@+id/edit_plan_name1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="1dp"
@@ -93,6 +92,7 @@
                     android:textSize="20sp" />
 
                 <EditText
+
                     android:id="@+id/edit_firstName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -104,7 +104,7 @@
                     android:textSize="20sp" />
 
                 <Button
-                    android:id="@+id/btn_move_plan1"
+                    android:id="@+id/btn_plan_move1"
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
                     android:background="@drawable/button_design"
@@ -116,7 +116,6 @@
                     app:backgroundTint="@null" />
 
 
-
             </TableRow>
 
             <TableRow
@@ -125,6 +124,7 @@
                 android:padding="1dp">
 
                 <EditText
+                    android:id="@+id/edit_plan_name2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="1dp"
@@ -146,9 +146,9 @@
                     android:textSize="20sp" />
 
                 <Button
-                    android:id="@+id/btn_move_plan2"
+                    android:id="@+id/btn_plan_move2"
                     android:layout_width="wrap_content"
-                    android:layout_height="35dp"
+                    android:layout_height="37dp"
                     android:background="@drawable/button_design"
                     android:backgroundTint="#C9CDF1"
                     android:fontFamily="@font/tway_air"
@@ -166,6 +166,7 @@
                 android:padding="1dp">
 
                 <EditText
+                    android:id="@+id/edit_plan_name3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="1dp"
@@ -187,9 +188,9 @@
                     android:textSize="20sp" />
 
                 <Button
-                    android:id="@+id/btn_move_plan3"
+                    android:id="@+id/btn_plan_move3"
                     android:layout_width="wrap_content"
-                    android:layout_height="35dp"
+                    android:layout_height="37dp"
                     android:background="@drawable/button_design"
                     android:backgroundTint="#C9CDF1"
                     android:fontFamily="@font/tway_air"
@@ -206,6 +207,7 @@
                 android:padding="1dp">
 
                 <EditText
+                    android:id="@+id/edit_plan_name4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="1dp"
@@ -227,7 +229,7 @@
                     android:textSize="20sp" />
 
                 <Button
-                    android:id="@+id/btn_move_plan4"
+                    android:id="@+id/btn_plan_move4"
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
                     android:background="@drawable/button_design"
@@ -241,6 +243,26 @@
 
             </TableRow>
         </TableLayout>
+
+        <Button
+            android:id="@+id/btn_plan_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/button_design"
+            android:backgroundTint="#C9CDF1"
+            android:fontFamily="@font/tway_air"
+            android:text="저장"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:backgroundTint="@null" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
     </LinearLayout>
 
 </FrameLayout>

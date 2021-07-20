@@ -3,19 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".share_Fragment">
+    tools:context=".Detail_Plan1_Fragment">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/text_plan_name1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="180dp"
-            android:layout_marginTop="150dp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="130dp"
             android:fontFamily="@font/tway_air"
-            android:text="홈"
+            android:hint="ex1"
             android:textColor="@color/black"
             android:textSize="40sp" />
     </LinearLayout>
@@ -30,7 +31,7 @@
         <ImageView
             android:layout_width="67dp"
             android:layout_height="67dp"
-            tools:src="@tools:sample/avatars"/>
+            android:src="@drawable/profile"/>
         <Gallery
             android:id="@+id/gallery1"
             android:layout_width="match_parent"
@@ -46,22 +47,22 @@
         android:layout_marginTop="280dp"
         android:layout_weight="1"
         android:orientation="horizontal">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/member_name1"
-        android:text="양형준"
-        android:textSize="20dp"
-        android:fontFamily="@font/tway_air"
-        android:layout_marginLeft="7dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/detail_plan1_member_name1"
+            android:text="이름"
+            android:textSize="20dp"
+            android:fontFamily="@font/tway_air"
+            android:layout_marginLeft="7dp"/>
 
-    <ProgressBar
-        android:id="@+id/progress1"
-        style="@android:style/Widget.ProgressBar.Horizontal"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:progress="100" />
+        <ProgressBar
+            android:id="@+id/progress1"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:progress="100" />
         <EditText
             android:id="@+id/progress_edit1"
             android:layout_width="50dp"
@@ -85,7 +86,7 @@
         <ImageView
             android:layout_width="67dp"
             android:layout_height="67dp"
-            tools:src="@tools:sample/avatars" />
+            android:src="@drawable/profile" />
         <Gallery
             android:id="@+id/gallery2"
             android:layout_width="match_parent"
@@ -104,8 +105,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/member_name2"
-            android:text="이승찬"
+            android:id="@+id/detail_plan1_member_name2"
+            android:text="이름"
             android:textSize="20dp"
             android:fontFamily="@font/tway_air"
             android:layout_marginLeft="7dp"/>
@@ -140,7 +141,7 @@
         <ImageView
             android:layout_width="67dp"
             android:layout_height="67dp"
-            tools:src="@tools:sample/avatars" />
+            android:src="@drawable/profile" />
         <Gallery
             android:id="@+id/gallery3"
             android:layout_width="match_parent"
@@ -159,8 +160,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/member_name3"
-            android:text="박종호"
+            android:id="@+id/detail_plan1_member_name3"
+            android:text="이름"
             android:textSize="20dp"
             android:fontFamily="@font/tway_air"
             android:layout_marginLeft="7dp"/>
@@ -194,7 +195,7 @@
         <ImageView
             android:layout_width="67dp"
             android:layout_height="67dp"
-            tools:src="@tools:sample/avatars" />
+            android:src="@drawable/profile" />
         <Gallery
             android:id="@+id/gallery4"
             android:layout_width="match_parent"
@@ -213,8 +214,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/member_name4"
-            android:text="박기환"
+            android:id="@+id/detail_plan1_member_name4"
+            android:text="이름"
             android:textSize="20dp"
             android:fontFamily="@font/tway_air"
             android:layout_marginLeft="7dp"/>

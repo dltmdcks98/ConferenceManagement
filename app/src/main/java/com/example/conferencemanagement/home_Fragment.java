@@ -34,23 +34,23 @@ public class home_Fragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home_, container, false);
 
-        edit_firstName = (EditText) v.findViewById(R.id.edit_firstName);
-        edit_secondName = (EditText)v.findViewById(R.id.edit_secondName);
-        edit_thirdName = (EditText)v.findViewById(R.id.edit_thirdName);
-        edit_fourthName = (EditText)v.findViewById(R.id.edit_fourthName);
-        edit_firstRole = (EditText)v.findViewById(R.id.edit_firstRole);
-        edit_secondRole = (EditText)v.findViewById(R.id.edit_secondRole);
-        edit_thirdRole = (EditText)v.findViewById(R.id.edit_thirdRole);
-        edit_fourthRole = (EditText)v.findViewById(R.id.edit_fourthRole);
-        textView = (TextView)v.findViewById(R.id.textView);
 
-        btn_homeSave =(Button) v.findViewById(R.id.btn_homeSave);
+        edit_firstName = (EditText) v.findViewById(R.id.edit_firstName);
+        edit_secondName = (EditText) v.findViewById(R.id.edit_secondName);
+        edit_thirdName = (EditText) v.findViewById(R.id.edit_thirdName);
+        edit_fourthName = (EditText) v.findViewById(R.id.edit_fourthName);
+        edit_firstRole = (EditText) v.findViewById(R.id.edit_firstRole);
+        edit_secondRole = (EditText) v.findViewById(R.id.edit_secondRole);
+        edit_thirdRole = (EditText) v.findViewById(R.id.edit_thirdRole);
+        edit_fourthRole = (EditText) v.findViewById(R.id.edit_fourthRole);
+        textView = (TextView) v.findViewById(R.id.textView);
+
+        btn_homeSave = (Button) v.findViewById(R.id.btn_homeSave);
         btn = (Button) v.findViewById(R.id.btn);
 
         btn_homeSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
 
 
                 Bundle bundle = new Bundle();
@@ -59,18 +59,28 @@ public class home_Fragment extends Fragment {
                 bundle.putString("third_name", edit_thirdName.getText().toString());
                 bundle.putString("fourth_name", edit_fourthName.getText().toString());
 
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                FragmentTransaction transaction1 = getActivity().getSupportFragmentManager().beginTransaction();
+                FragmentTransaction transaction2 = getActivity().getSupportFragmentManager().beginTransaction();
+
+
                 teamLeader_Fragment teamLeader_fragment = new teamLeader_Fragment();
                 teamLeader_fragment.setArguments(bundle);
-                transaction.add(R.id.container, teamLeader_fragment);
-                transaction.replace(R.id.container, teamLeader_fragment);
-                transaction.commit();
+                Detail_Plan1_Fragment detail_plan1_fragment = new Detail_Plan1_Fragment();
+                detail_plan1_fragment.setArguments(bundle);
+
+
+                transaction1.add(R.id.container, teamLeader_fragment);
+                transaction1.replace(R.id.container, teamLeader_fragment);
+                transaction1.commit();
+
+                transaction2.add(R.id.container, detail_plan1_fragment);
+                transaction2.replace(R.id.container, detail_plan1_fragment);
+                transaction2.commit();
 
 
             }
 
         });
-
 
 
         return v;

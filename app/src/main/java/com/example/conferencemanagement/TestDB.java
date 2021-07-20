@@ -9,15 +9,23 @@ public class TestDB extends SQLiteOpenHelper {
         super(context, "TestDB2", null, 1);
     }
 
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE member (_id INTEGER PRIMARY KEY AUTOINCREMENT, Name char(20), Role char(20));");
+        String sql = "CREATE TABLE if not exists member ("
+                + " _id integer primary key autoincrement, "
+                + " Name char(20),"
+                + " Role char(20));";
+
+        db.execSQL(sql);
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL("DROP TABLE IF EXISTS member");
+        String sql = "DROP TABLE if exists member";
+        db.execSQL(sql);
         onCreate(db);
     }
 }
