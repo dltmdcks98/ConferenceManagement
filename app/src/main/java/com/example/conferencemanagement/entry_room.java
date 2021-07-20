@@ -3,6 +3,7 @@ package com.example.conferencemanagement;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
@@ -20,6 +21,8 @@ import static android.widget.SearchView.*;
 public class entry_room extends AppCompatActivity {
     EditText name,searchView;
     Button confirm;
+    SQLiteDatabase sqlDB;
+    roomDB myHelper;
    // SearchView searchView;
 
 
@@ -33,6 +36,8 @@ public class entry_room extends AppCompatActivity {
         confirm = (Button)findViewById(R.id.confirm);
         searchView = (EditText)findViewById(R.id.search);
 
+        myHelper = new roomDB(this);
+
         confirm.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,8 +46,26 @@ public class entry_room extends AppCompatActivity {
                 }else if(name.getText().toString().equals("")){
                     Toast.makeText(entry_room.this,"닉네임을 입력해주세요",Toast.LENGTH_SHORT).show();
                 }else{
-                    Intent intent = new Intent(getApplicationContext(),room.class);
-                    startActivity(intent);
+
+                    try {
+                        String name = null;
+                        sqlDB = myHelper.getReadableDatabase();
+
+                        Cursor cursor;
+                        cursor = sqlDB.rawQuery("SELECT name FROM roomDB WHERE"+ searchView.getText().toString() + ";",null);
+                        if (cursor != null){
+                            while (cursor.moveToNext()){
+                                name = cursor.getString(cursor.getColumnIndex("name"));
+                            }
+                        }
+                        Toast.makeText(entry_room.this,name,Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(getApplicationContext(),room.class);
+                        startActivity(intent);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Toast.makeText(entry_room.this,"존재하지 않는 방입니다",Toast.LENGTH_SHORT).show();
+                    }
                 }
 
             }
@@ -66,5 +89,14 @@ public class entry_room extends AppCompatActivity {
 //
 //        });
 
+    }
+    //https://blog.naver.com/PostView.nhn?blogId=qbxlvnf11&logNo=221406135285&categoryNo=44&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView
+    void DBSearch(String tableName, Integer code){
+        Cursor cursor = null;
+        try{
+            cursor = sqlDB.query(tableName,null,"code"+" = ? ", new String[code.toString()],null,null,);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

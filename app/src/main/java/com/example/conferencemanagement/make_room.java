@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-public class make_room extends Activity {
+public class    make_room extends Activity {
     roomDB myHelper;
     EditText roomCode, roomName;
     Button ranbomCode, btnSave, btnReset;
