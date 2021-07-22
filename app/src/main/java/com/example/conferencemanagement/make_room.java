@@ -31,7 +31,7 @@ public class    make_room extends Activity {
         roomName = (EditText) findViewById(R.id.roomName);
         ranbomCode = (Button) findViewById(R.id.ranbomCode);
         btnSave = (Button) findViewById(R.id.btnSave);
-        btnReset = (Button)findViewById(R.id.btnReset);
+        btnReset = (Button) findViewById(R.id.btnReset);
 
         myHelper = new roomDB(this);
 
@@ -46,7 +46,7 @@ public class    make_room extends Activity {
             @Override
             public void onClick(View v) {
                 sqlDB = myHelper.getWritableDatabase();
-                myHelper.onUpgrade(sqlDB,1,2);
+                myHelper.onUpgrade(sqlDB, 1, 2);
                 sqlDB.close();
                 Toast.makeText(make_room.this, "DB를 초기화 합니다.", Toast.LENGTH_SHORT).show();
             }
@@ -64,9 +64,7 @@ public class    make_room extends Activity {
                     //DB에 저장
                     sqlDB = myHelper.getWritableDatabase();
                     try {
-                        sqlDB.execSQL("INSERT INTO roomDB VALUES ( '"
-                                + roomName.getText().toString() + "' , "
-                                + roomCode.getText().toString() + ");");
+                        sqlDB.execSQL("INSERT INTO roomDB VALUES ( '"+ roomName.getText().toString() + "' , "+ roomCode.getText().toString() + ");");
                         Toast.makeText(make_room.this, "저장.", Toast.LENGTH_SHORT).show();
                     } catch (SQLException e) {
                         e.printStackTrace();

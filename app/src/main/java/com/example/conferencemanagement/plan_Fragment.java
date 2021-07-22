@@ -44,11 +44,10 @@ public class plan_Fragment extends Fragment {
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
 
                 Detail_Plan1_Fragment detail_plan1_fragment = new Detail_Plan1_Fragment();
-                detail_plan1_fragment.setArguments(bundle);
 
                 bundle.putString("edit_plan_name1", edit_plan_name1.getText().toString());
 
-
+                detail_plan1_fragment.setArguments(bundle);
                 transaction.commit();
 
 

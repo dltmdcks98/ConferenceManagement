@@ -27,9 +27,16 @@ public class Detail_Plan1_Fragment extends Fragment {
 
         text_plan_name1 =(TextView) v.findViewById(R.id.text_plan_name1);
 
+
         Bundle bundle = getArguments();
+        Bundle bundle2 = getArguments();
 
         if (bundle != null) {
+            detail_plan1_member_name1.setText(bundle.getString("first_name"));
+            detail_plan1_member_name2.setText(bundle.getString("second_name"));
+            detail_plan1_member_name3.setText(bundle.getString("third_name"));
+            detail_plan1_member_name4.setText(bundle.getString("fourth_name"));
+
 
 
             text_plan_name1.setText(bundle.getString("edit_plan_name1"));

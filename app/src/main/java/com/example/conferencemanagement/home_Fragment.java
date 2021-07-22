@@ -1,10 +1,12 @@
 package com.example.conferencemanagement;
 
+import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -25,15 +27,24 @@ public class home_Fragment extends Fragment {
     EditText edit_firstName, edit_secondName, edit_thirdName, edit_fourthName;
     EditText edit_firstRole, edit_secondRole, edit_thirdRole, edit_fourthRole;
     Button btn_homeSave, btn;
-    TestDB testDB;
+    TestDB testDB = null;
     SQLiteDatabase sql;
     TextView textView;
 
     @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        testDB = new TestDB(activity);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_home_, container, false);
 
+        sql = testDB.getWritableDatabase();
+
+
+        View v = inflater.inflate(R.layout.fragment_home_, container, false);
 
         edit_firstName = (EditText) v.findViewById(R.id.edit_firstName);
         edit_secondName = (EditText) v.findViewById(R.id.edit_secondName);
@@ -53,33 +64,15 @@ public class home_Fragment extends Fragment {
             public void onClick(View view) {
 
 
-                Bundle bundle = new Bundle();
-                bundle.putString("first_name", edit_firstName.getText().toString());
-                bundle.putString("second_name", edit_secondName.getText().toString());
-                bundle.putString("third_name", edit_thirdName.getText().toString());
-                bundle.putString("fourth_name", edit_fourthName.getText().toString());
-
-                FragmentTransaction transaction1 = getActivity().getSupportFragmentManager().beginTransaction();
-                FragmentTransaction transaction2 = getActivity().getSupportFragmentManager().beginTransaction();
+                sql.execSQL("INSERT INTO member VALUES('edit_firstName.getText().toString()',' edit_firstRole.getText().toString()'," +
+                        "'edit_secondName.getText().toString()','edit_secondRole.getText().toString()'," +
+                        "' edit_thirdName.getText().toString()','edit_thirdRole.getText().toString()'," +
+                        "'edit_fourthName.getText().toString()','edit_fourthRole.getText().toString()');");
 
 
-                teamLeader_Fragment teamLeader_fragment = new teamLeader_Fragment();
-                teamLeader_fragment.setArguments(bundle);
-                Detail_Plan1_Fragment detail_plan1_fragment = new Detail_Plan1_Fragment();
-                detail_plan1_fragment.setArguments(bundle);
-
-
-                transaction1.add(R.id.container, teamLeader_fragment);
-                transaction1.replace(R.id.container, teamLeader_fragment);
-                transaction1.commit();
-
-                transaction2.add(R.id.container, detail_plan1_fragment);
-                transaction2.replace(R.id.container, detail_plan1_fragment);
-                transaction2.commit();
-
+                sql.close();
 
             }
-
         });
 
 
