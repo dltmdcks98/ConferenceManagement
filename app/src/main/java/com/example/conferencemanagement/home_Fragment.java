@@ -18,7 +18,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 
-
 public class home_Fragment extends Fragment {
 
     Context mContext = getActivity();
@@ -62,10 +61,7 @@ public class home_Fragment extends Fragment {
             public void onClick(View view) {
 
 
-                sql.execSQL("INSERT INTO member VALUES('edit_firstName.getText().toString()',' edit_firstRole.getText().toString()'," +
-                        "'edit_secondName.getText().toString()','edit_secondRole.getText().toString()'," +
-                        "' edit_thirdName.getText().toString()','edit_thirdRole.getText().toString()'," +
-                        "'edit_fourthName.getText().toString()','edit_fourthRole.getText().toString()');");
+                sql.execSQL("INSERT INTO member VALUES ( '" + edit_firstName.getText().toString() + "' , '" + edit_secondName.getText().toString() + "', '" + edit_thirdName.getText().toString() + "', '" + edit_fourthName.getText().toString() + "', '" + edit_firstRole.getText().toString() + "', '" + edit_secondRole.getText().toString() + "', '" + edit_thirdRole.getText().toString() + "', '" + edit_fourthRole.getText().toString() + "');");
 
 
                 sql.close();
