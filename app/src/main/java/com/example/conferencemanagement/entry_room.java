@@ -7,6 +7,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
+import android.text.Editable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import static android.content.ContentValues.TAG;
 import static android.widget.SearchView.*;
 
 public class entry_room extends AppCompatActivity {
@@ -52,14 +55,13 @@ public class entry_room extends AppCompatActivity {
                         sqlDB = myHelper.getReadableDatabase();
 
                         Cursor cursor;
-                        cursor = sqlDB.rawQuery("SELECT name FROM roomDB WHERE"+ searchView.getText().toString() + ";",null);
+                        cursor = sqlDB.rawQuery("SELECT name FROM roomDB WHERE code = "+ searchView.getText().toString() + ";",null);
                         if (cursor != null){
                             while (cursor.moveToNext()){
                                 name = cursor.getString(cursor.getColumnIndex("name"));
                             }
                         }
                         Toast.makeText(entry_room.this,name,Toast.LENGTH_SHORT).show();
-
                         Intent intent = new Intent(getApplicationContext(),room.class);
                         startActivity(intent);
                     } catch (Exception e) {
@@ -89,14 +91,5 @@ public class entry_room extends AppCompatActivity {
 //
 //        });
 
-    }
-    //https://blog.naver.com/PostView.nhn?blogId=qbxlvnf11&logNo=221406135285&categoryNo=44&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView
-    void DBSearch(String tableName, Integer code){
-        Cursor cursor = null;
-        try{
-            cursor = sqlDB.query(tableName,null,"code"+" = ? ", new String[code.toString()],null,null,);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }
