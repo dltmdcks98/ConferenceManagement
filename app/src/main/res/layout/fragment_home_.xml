@@ -36,6 +36,7 @@
             android:text="프로젝트 : " />
 
         <EditText
+            android:textIsSelectable="false"
             android:id="@+id/edit_projectName"
             android:layout_width="291dp"
             android:layout_height="wrap_content"
@@ -127,6 +128,7 @@
                     android:textSize="20sp" />
 
                 <EditText
+                    android:textIsSelectable="false"
                     android:id="@+id/edit_firstRole"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -157,6 +159,7 @@
                     android:textSize="20sp" />
 
                 <EditText
+                    android:textIsSelectable="false"
                     android:id="@+id/edit_secondName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -168,6 +171,7 @@
                     android:textSize="20sp" />
 
                 <EditText
+                    android:textIsSelectable="false"
                     android:id="@+id/edit_secondRole"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -198,6 +202,7 @@
                     android:textSize="20sp" />
 
                 <EditText
+                    android:textIsSelectable="false"
                     android:id="@+id/edit_thirdName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -209,6 +214,7 @@
                     android:textSize="20sp" />
 
                 <EditText
+                    android:textIsSelectable="false"
                     android:id="@+id/edit_thirdRole"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -238,6 +244,7 @@
                     android:textSize="20sp" />
 
                 <EditText
+                    android:textIsSelectable="false"
                     android:id="@+id/edit_fourthName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -249,6 +256,7 @@
                     android:textSize="20sp" />
 
                 <EditText
+                    android:textIsSelectable="false"
                     android:id="@+id/edit_fourthRole"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

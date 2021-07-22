@@ -17,8 +17,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 
 public class home_Fragment extends Fragment {

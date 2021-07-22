@@ -7,13 +7,13 @@ import android.view.View;
 
 public class TestDB extends SQLiteOpenHelper {
     public TestDB(Context context) {
-        super(context, "TestDB2", null, 1);
+        super(context, "TestDB", null, 1);
     }
 
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE member (_id INTEGER PRIMARY KEY AUTOINCREMENT, Name1 char(20), Name2 char(20), Name3 char(20), Name4 char(20), Role1 char(10), Role2 char(10), Role3 char(10), Role4 char(10));");
+        db.execSQL("CREATE TABLE member ( firstName VARCHAR(20), secondName VARCHAR(20), thirdName VARCHAR(20), fourthName VARCHAR(20), firstRole VARCHAR(10), secondRole VARCHAR(10), thirdRole VARCHAR(10), fourthRole VARCHAR(10));");
 
 
 
