@@ -26,7 +26,7 @@ public class home_Fragment extends Fragment {
     Button btn_homeSave, btn;
     TestDB testDB = null;
     SQLiteDatabase sql;
-    TextView textView;
+
 
     @Override
     public void onAttach(Activity activity) {
@@ -51,24 +51,17 @@ public class home_Fragment extends Fragment {
         edit_secondRole = (EditText) v.findViewById(R.id.edit_secondRole);
         edit_thirdRole = (EditText) v.findViewById(R.id.edit_thirdRole);
         edit_fourthRole = (EditText) v.findViewById(R.id.edit_fourthRole);
-        textView = (TextView) v.findViewById(R.id.textView);
 
         btn_homeSave = (Button) v.findViewById(R.id.btn_homeSave);
-        btn = (Button) v.findViewById(R.id.btn);
 
         btn_homeSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-
                 sql.execSQL("INSERT INTO member VALUES ( '" + edit_firstName.getText().toString() + "' , '" + edit_secondName.getText().toString() + "', '" + edit_thirdName.getText().toString() + "', '" + edit_fourthName.getText().toString() + "', '" + edit_firstRole.getText().toString() + "', '" + edit_secondRole.getText().toString() + "', '" + edit_thirdRole.getText().toString() + "', '" + edit_fourthRole.getText().toString() + "');");
-
-
                 sql.close();
-
             }
         });
-
 
         return v;
     }

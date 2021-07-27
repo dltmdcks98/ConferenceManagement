@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Detail_Plan1_Fragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Detail_Plan3_Fragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,7 +51,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/member_name1"
+            android:id="@+id/detail_plan3_member_name1"
             android:text="이름"
             android:textSize="20dp"
             android:fontFamily="@font/tway_air"
@@ -105,7 +106,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/member_name2"
+            android:id="@+id/detail_plan3_member_name2"
             android:text="이름"
             android:textSize="20dp"
             android:fontFamily="@font/tway_air"
@@ -160,7 +161,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/member_name3"
+            android:id="@+id/detail_plan3_member_name3"
             android:text="이름"
             android:textSize="20dp"
             android:fontFamily="@font/tway_air"
@@ -214,7 +215,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/member_name4"
+            android:id="@+id/detail_plan3_member_name4"
             android:text="이름"
             android:textSize="20dp"
             android:fontFamily="@font/tway_air"
@@ -237,6 +238,7 @@
             android:textSize="20dp" />
 
     </LinearLayout>
+
 
 
 </FrameLayout>
