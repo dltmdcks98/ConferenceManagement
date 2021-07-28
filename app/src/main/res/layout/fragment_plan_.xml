@@ -26,7 +26,6 @@
         android:layout_width="match_parent"
         android:layout_height="355dp"
         android:layout_marginTop="350dp"
-        android:layout_weight="1"
         android:orientation="vertical">
 
         <TableLayout
@@ -93,7 +92,7 @@
 
                 <EditText
 
-                    android:id="@+id/edit_firstName"
+                    android:id="@+id/edit_first_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="1dp"
@@ -135,7 +134,7 @@
                     android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/edit_secondName"
+                    android:id="@+id/edit_second_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="1dp"
@@ -177,7 +176,7 @@
                     android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/edit_thirdName"
+                    android:id="@+id/edit_third_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="1dp"
@@ -218,7 +217,7 @@
                     android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/edit_fourthName"
+                    android:id="@+id/edit_fourth_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="1dp"
@@ -243,24 +242,41 @@
 
             </TableRow>
         </TableLayout>
-
-        <Button
-            android:id="@+id/btn_plan_save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="100dp"
-            android:background="@drawable/button_design"
-            android:backgroundTint="#C9CDF1"
-            android:fontFamily="@font/tway_air"
-            android:text="저장"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            app:backgroundTint="@null" />
-
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_plan_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="100dp"
+                android:background="@drawable/button_design"
+                android:backgroundTint="#C9CDF1"
+                android:fontFamily="@font/tway_air"
+                android:text="저장"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:backgroundTint="@null" />
+            <Button
+                android:id="@+id/btn_plan_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="170dp"
+                android:layout_marginBottom="100dp"
+                android:background="@drawable/button_design"
+                android:backgroundTint="#C9CDF1"
+                android:fontFamily="@font/tway_air"
+                android:text="조회"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:backgroundTint="@null" />
+
+
+        </LinearLayout>
+
 
 
     </LinearLayout>

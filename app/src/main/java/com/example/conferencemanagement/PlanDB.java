@@ -11,12 +11,12 @@ public class PlanDB extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE planDB ( firstPlan VARCHAR(20), secondPlan VARCHAR(20), thirdPlan VARCHAR(20), fourthPlan VARCHAR(20));");
+        db.execSQL("CREATE TABLE planDB ( firstPlan VARCHAR(20), secondPlan VARCHAR(20), thirdPlan VARCHAR(20), fourthPlan VARCHAR(20), firstDate VARCHAR(20), secondDate VARCHAR(20), thirdDate VARCHAR(20), fourthDate VARCHAR(20));");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        String sql = "DROP TABLE IF EXISTS member";
+        String sql = "DROP TABLE IF EXISTS planDB";
         db.execSQL(sql);
         onCreate(db);
     }

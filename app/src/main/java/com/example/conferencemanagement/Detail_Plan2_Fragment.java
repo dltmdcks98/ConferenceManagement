@@ -19,15 +19,17 @@ import org.w3c.dom.Text;
 public class Detail_Plan2_Fragment extends Fragment {
 
     TextView detail_plan2_member_name1, detail_plan2_member_name2, detail_plan2_member_name3, detail_plan2_member_name4;
-    Button btn_pan_detail_2_show;
+
     TextView text_plan_name2;
+    PlanDB planDB = null;
     TestDB testDB = null;
-    SQLiteDatabase sql;
+    SQLiteDatabase sql, plan_sql;
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         testDB = new TestDB(activity);
+        planDB = new PlanDB(activity);
     }
 
     @Override
@@ -40,11 +42,14 @@ public class Detail_Plan2_Fragment extends Fragment {
         detail_plan2_member_name3 = (TextView)v.findViewById(R.id.detail_plan2_member_name3);
         detail_plan2_member_name4 = (TextView)v.findViewById(R.id.detail_plan2_member_name4);
         text_plan_name2 = (TextView) v.findViewById(R.id.text_plan_name2);
-        btn_pan_detail_2_show = (Button)v.findViewById(R.id.btn_pan_detail_2_show);
+
 
         sql = testDB.getReadableDatabase();
+        plan_sql = planDB.getReadableDatabase();
         Cursor cursor;
+        Cursor cursor_planDB;
         String name1 = null, name2 = null, name3 = null, name4 = null;
+        String plan_name2 = null;
 
         cursor = sql.rawQuery("SELECT * FROM MEMBER;", null);
         if (cursor != null) {
@@ -62,6 +67,18 @@ public class Detail_Plan2_Fragment extends Fragment {
 
         cursor.close();
         sql.close();
+
+        cursor_planDB =  plan_sql.rawQuery("SELECT * FROM planDB;", null);
+        if(cursor_planDB != null){
+            while(cursor_planDB.moveToNext()){
+                plan_name2 = cursor_planDB.getString(1);
+
+            }
+        }
+        text_plan_name2.setText(plan_name2);
+
+        cursor_planDB.close();
+        plan_sql.close();
 
 
 
