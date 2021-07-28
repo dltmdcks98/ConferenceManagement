@@ -18,7 +18,6 @@ public class teamLeader_Fragment extends Fragment {
 
     TextView text_profile_1_name, text_profile_2_name, text_profile_3_name, text_profile_4_name;
     TextView text_profile_1_limit, text_profile_2_limit, text_profile_3_limit, text_profile_4_limit;
-    Button btn_team_leader_show;
     TestDB testDB;
     SQLiteDatabase sql;
 
@@ -41,7 +40,6 @@ public class teamLeader_Fragment extends Fragment {
         text_profile_3_limit = (TextView) v.findViewById(R.id.text_profile_3_limit);
         text_profile_4_limit = (TextView) v.findViewById(R.id.text_profile_4_limit);
 
-        btn_team_leader_show = (Button) v.findViewById(R.id.btn_team_leader_show);
 
         sql = testDB.getReadableDatabase();
         Cursor cursor;

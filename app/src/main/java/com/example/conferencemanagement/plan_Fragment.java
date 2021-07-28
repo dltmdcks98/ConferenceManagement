@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class plan_Fragment extends Fragment {
@@ -65,6 +66,9 @@ public class plan_Fragment extends Fragment {
                 sql_plan.execSQL("INSERT INTO planDB VALUES ( '" + edit_plan_name1.getText().toString() + "' , '" + edit_plan_name2.getText().toString() + "', '" + edit_plan_name3.getText().toString() + "', '" + edit_plan_name4.getText().toString() + "', '" + edit_first_date.getText().toString() + "' , '" + edit_second_date.getText().toString() + "', '" + edit_third_date.getText().toString() + "', '" + edit_fourth_date.getText().toString() + "');");
                 sql_plan.close();
 
+                Toast.makeText(getActivity(), "저장 되었습니다.", Toast.LENGTH_SHORT).show();
+
+
 
             }
         });
@@ -101,6 +105,8 @@ public class plan_Fragment extends Fragment {
                 edit_second_date.setText(secondDate);
                 edit_third_date.setText(thirdDate);
                 edit_fourth_date.setText(fourthDate);
+
+                Toast.makeText(getActivity(), "조회했습니다.", Toast.LENGTH_SHORT).show();
 
 
             }

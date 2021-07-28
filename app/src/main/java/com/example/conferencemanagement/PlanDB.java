@@ -7,11 +7,11 @@ import android.database.Cursor;
 
 
 public class PlanDB extends SQLiteOpenHelper {
-    public PlanDB(Context context) {super(context, "PlanDB", null, 1);}
+    public PlanDB(Context context) {super(context, "PlanDB2", null, 1);}
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE planDB ( firstPlan VARCHAR(20), secondPlan VARCHAR(20), thirdPlan VARCHAR(20), fourthPlan VARCHAR(20), firstDate VARCHAR(20), secondDate VARCHAR(20), thirdDate VARCHAR(20), fourthDate VARCHAR(20));");
+        db.execSQL("CREATE TABLE planDB ( firstName VARCHAR(10), secondName VARCHAR(10), thirdName VARCHAR(10), fourthName VARCHAR(10), firstDate VARCHAR(10), secondDate VARCHAR(10), thirdDate VARCHAR(10), fourthDate VARCHAR(10));");
     }
 
     @Override

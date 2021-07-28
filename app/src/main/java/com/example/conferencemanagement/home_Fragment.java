@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class home_Fragment extends Fragment {
@@ -60,6 +61,8 @@ public class home_Fragment extends Fragment {
 
                 sql.execSQL("INSERT INTO member VALUES ( '" + edit_firstName.getText().toString() + "' , '" + edit_secondName.getText().toString() + "', '" + edit_thirdName.getText().toString() + "', '" + edit_fourthName.getText().toString() + "', '" + edit_firstRole.getText().toString() + "', '" + edit_secondRole.getText().toString() + "', '" + edit_thirdRole.getText().toString() + "', '" + edit_fourthRole.getText().toString() + "');");
                 sql.close();
+
+                Toast.makeText(getActivity(), "저장되었습니다.", Toast.LENGTH_SHORT).show();
             }
         });
 
