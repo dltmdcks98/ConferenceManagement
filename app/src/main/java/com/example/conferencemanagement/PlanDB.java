@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.Cursor;
+import android.text.NoCopySpan;
 
 
 public class PlanDB extends SQLiteOpenHelper {
@@ -20,5 +21,7 @@ public class PlanDB extends SQLiteOpenHelper {
         db.execSQL(sql);
         onCreate(db);
     }
+
+
 
 }

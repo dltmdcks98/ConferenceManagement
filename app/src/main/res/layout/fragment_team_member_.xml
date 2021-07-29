@@ -61,7 +61,6 @@
             android:id="@+id/gallery1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:spacing="5dp"/>
 
     </LinearLayout>
@@ -87,7 +86,7 @@
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
-            android:progress="100" />
+            android:progress="78" />
 
         <EditText
             android:id="@+id/progress_edit"
@@ -101,7 +100,7 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/member_edit2"
+        android:id="@+id/edit_explain"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginLeft="10dp"
