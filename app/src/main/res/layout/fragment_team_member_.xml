@@ -57,11 +57,12 @@
             android:layout_width="67dp"
             android:layout_height="67dp"
             tools:src="@drawable/profile" />
+
         <Gallery
             android:id="@+id/gallery1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:spacing="5dp"/>
+            android:spacing="5dp" />
 
     </LinearLayout>
 
@@ -90,13 +91,18 @@
 
         <EditText
             android:id="@+id/progress_edit"
-            android:layout_width="50dp"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:background="@drawable/button_design"
-            android:text=" 78%"
+            android:text=" 78"
             android:textSize="20dp" />
-
+        <TextView
+            android:layout_width="15dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_design"
+            android:text="%"
+            android:textSize="20dp" />
     </LinearLayout>
 
     <EditText

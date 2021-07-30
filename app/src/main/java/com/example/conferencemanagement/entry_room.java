@@ -24,8 +24,9 @@ import static android.widget.SearchView.*;
 public class entry_room extends AppCompatActivity {
     EditText name,searchView;
     Button confirm;
-    SQLiteDatabase sqlDB;
+    SQLiteDatabase sqlDB,sqlDB1;
     roomDB myHelper;
+    entryNameDB nameDB;
    // SearchView searchView;
 
 
@@ -40,6 +41,7 @@ public class entry_room extends AppCompatActivity {
         searchView = (EditText)findViewById(R.id.search);
 
         myHelper = new roomDB(this);
+        nameDB = new entryNameDB(this);
 
         confirm.setOnClickListener(new OnClickListener() {
             @Override
@@ -61,6 +63,8 @@ public class entry_room extends AppCompatActivity {
                                 name = cursor.getString(cursor.getColumnIndex("name"));
                             }
                         }
+                        sqlDB1 = nameDB.getWritableDatabase();
+                        sqlDB1.execSQL("INSERT INTO entryName VALUES (' " + entry_room.this.name.getText().toString() + "');");
                         Toast.makeText(entry_room.this,name,Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(),room.class);
                         startActivity(intent);
