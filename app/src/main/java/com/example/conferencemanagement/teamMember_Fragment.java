@@ -30,13 +30,15 @@ public class teamMember_Fragment extends Fragment {
 
     roomDB roomDB;
     TeamDB teamDB;
-    SQLiteDatabase sql,sql1;
+    entryNameDB nameDB;
+    SQLiteDatabase sql,sql1,sql2;
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         roomDB = new roomDB(activity);
         teamDB = new TeamDB(activity);
+        nameDB = new entryNameDB(activity);
     }
 
 
@@ -60,19 +62,22 @@ public class teamMember_Fragment extends Fragment {
 
         sql = roomDB.getReadableDatabase();
         sql1 = teamDB.getWritableDatabase();
-        Cursor cursor;
+        sql2 = nameDB.getReadableDatabase();
+//        Cursor cursor;
         Cursor cursor1;
+        Cursor cursor2;
 
 
         String name1 = null, name2 = null, name3 = null, name4 = null;
+        String Username = null;
 
-        cursor = sql.rawQuery("SELECT name FROM roomDB;", null);
-        if (cursor != null) {
-            while (cursor.moveToNext()) {
-                name1 = cursor.getString(0);
-
-            }
-            }
+//        cursor = sql.rawQuery("SELECT name FROM roomDB;", null);
+//        if (cursor != null) {
+//            while (cursor.moveToNext()) {
+//                name1 = cursor.getString(0);
+//
+//            }
+//            }
 
         String edit1 = null, edit2 = null, edit3 = null;
         cursor1 = sql1.rawQuery("SELECT limitation FROM team;",null);
@@ -93,11 +98,17 @@ public class teamMember_Fragment extends Fragment {
                 edit3 = cursor1.getString(0);
             }
         }
+        cursor2 = sql2.rawQuery("SELECT name FROM entryName;",null);
+        if(cursor2 != null){
+            while(cursor2.moveToNext()){
+                Username = cursor2.getString(0);
+            }
+        }
         editLimit.setText(edit1);
         editProgress.setText(edit2);
         editExplain.setText(edit3);
         progressBar.setProgress(Integer.parseInt(edit2));
-        name.setText(name1);
+        name.setText(Username);
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,8 +122,11 @@ public class teamMember_Fragment extends Fragment {
                 Toast.makeText(getActivity(), "저장되었습니다.",Toast.LENGTH_SHORT).show();
             }
         });
-        cursor.close();
+
+        cursor1.close();
+        cursor2.close();
         sql.close();
+        sql2.close();
 
         return v;
 
