@@ -16,7 +16,7 @@ import androidx.annotation.Nullable;
 
 public class    make_room extends Activity {
     roomDB myHelper;
-    EditText roomCode, roomName;
+    EditText roomCode, roomName, passWord;
     Button ranbomCode, btnSave, btnReset;
     String Code;
     SQLiteDatabase sqlDB;
@@ -29,6 +29,7 @@ public class    make_room extends Activity {
 
         roomCode = (EditText) findViewById(R.id.roomCode);
         roomName = (EditText) findViewById(R.id.roomName);
+        passWord = (EditText) findViewById(R.id.passWord);
         ranbomCode = (Button) findViewById(R.id.ranbomCode);
         btnSave = (Button) findViewById(R.id.btnSave);
         btnReset = (Button) findViewById(R.id.btnReset);
@@ -42,6 +43,7 @@ public class    make_room extends Activity {
                 roomCode.setText(Code);
             }
         });
+
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,14 +59,19 @@ public class    make_room extends Activity {
             @Override
             public void onClick(View v) {
                 if (roomCode.getText().toString().equals("")) {
-                    Toast.makeText(make_room.this, "code가 비였습니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(make_room.this, "방의 코드를 입력해주세요 ", Toast.LENGTH_SHORT).show();
                 } else if (roomName.getText().toString().equals("")) {
-                    Toast.makeText(make_room.this, "name이 비었습니다.", Toast.LENGTH_SHORT).show();
-                } else {
+                    Toast.makeText(make_room.this, "이름을 입력해주세요", Toast.LENGTH_SHORT).show();
+                } else if (passWord.getText().toString().equals("")) {
+                    Toast.makeText(make_room.this, "비밀번호를 입력해주세요",Toast.LENGTH_SHORT).show();
+                }else {
                     //DB에 저장
                     sqlDB = myHelper.getWritableDatabase();
                     try {
-                        sqlDB.execSQL("INSERT INTO roomDB VALUES ( '"+ roomName.getText().toString() + "' , "+ roomCode.getText().toString() + ");");
+                        sqlDB.execSQL("INSERT INTO roomDB VALUES ( '"
+                                + roomName.getText().toString() + "' , "
+                                + roomCode.getText().toString() + ","
+                                + passWord.getText().toString() + ");");
                         Toast.makeText(make_room.this, "저장.", Toast.LENGTH_SHORT).show();
                     } catch (SQLException e) {
                         e.printStackTrace();

@@ -63,8 +63,6 @@ public class entry_room extends AppCompatActivity {
                                 name = cursor.getString(cursor.getColumnIndex("name"));
                             }
                         }
-                        sqlDB1 = nameDB.getWritableDatabase();
-                        sqlDB1.execSQL("INSERT INTO entryName VALUES (' " + entry_room.this.name.getText().toString() + "');");
                         Toast.makeText(entry_room.this,name,Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(),room.class);
                         startActivity(intent);

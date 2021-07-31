@@ -43,6 +43,15 @@
             android:layout_centerVertical="true"
             android:hint="코드 " />
 
+        <EditText
+            android:id="@+id/passWord"
+            android:fontFamily="@font/tway_air"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:hint="비밀번호  " />
+
         <Button
             android:id="@+id/ranbomCode"
             android:fontFamily="@font/tway_air"
@@ -60,8 +69,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/btnSave"
@@ -70,19 +79,20 @@
             android:background="@drawable/button_design"
             android:backgroundTint="#C9CDF1"
             android:fontFamily="@font/tway_air"
-            app:backgroundTint ="@null"
+            android:text="저장"
             android:textColor="@color/black"
-            android:text="저장" />
+            app:backgroundTint="@null" />
+
         <Button
             android:id="@+id/btnReset"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/button_design"
-            android:fontFamily="@font/tway_air"
             android:backgroundTint="#C9CDF1"
-            app:backgroundTint ="@null"
+            android:fontFamily="@font/tway_air"
+            android:text="초기화"
             android:textColor="@color/black"
-            android:text="초기화" />
+            app:backgroundTint="@null" />
     </LinearLayout>
 </LinearLayout>
