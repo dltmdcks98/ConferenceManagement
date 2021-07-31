@@ -53,6 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp"
                 android:hint="코드 검색"/>
     </RelativeLayout>
 
