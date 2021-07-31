@@ -16,7 +16,6 @@
             android:layout_height="wrap_content"
             android:text="방 입장"
             android:fontFamily="@font/tway_air"
-
             android:textSize="50dp"
             android:gravity="center"/>
     </LinearLayout>
@@ -32,7 +31,6 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="30dp"
             android:fontFamily="@font/tway_air"
             android:hint="닉네임"/>
 
@@ -53,7 +51,6 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="30dp"
                 android:hint="코드 검색"/>
     </RelativeLayout>
 
@@ -66,8 +63,6 @@
             android:id="@+id/confirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
             android:fontFamily="@font/tway_air"
             android:background="@drawable/button_design"
             android:backgroundTint="#C9CDF1"

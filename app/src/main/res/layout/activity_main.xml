@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="헤더 플레너"
+            android:fontFamily="@font/tway_air"
             android:textSize="50dp"/>
     </LinearLayout>
 
