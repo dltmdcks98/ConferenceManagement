@@ -66,7 +66,7 @@
             android:textColor="@color/black"/>
     </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -81,18 +81,26 @@
             android:fontFamily="@font/tway_air"
             android:text="저장"
             android:textColor="@color/black"
-            app:backgroundTint="@null" />
+            app:backgroundTint="@null"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="30dp"
+            />
 
         <Button
             android:id="@+id/btnReset"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginVertical="50dp"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="-8dp"
             android:background="@drawable/button_design"
             android:backgroundTint="#C9CDF1"
             android:fontFamily="@font/tway_air"
             android:text="초기화"
             android:textColor="@color/black"
             app:backgroundTint="@null" />
-    </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>
