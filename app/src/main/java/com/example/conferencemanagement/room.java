@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class room extends AppCompatActivity {
-    Fragment fragment_team_leader;
+    Fragment fragment_team_leader_lock;
     Fragment fragment_team_Member;
     Fragment fragment_home;
     Fragment fragment_plan;
@@ -22,7 +22,7 @@ public class room extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.room);
 
-        fragment_team_leader = new teamLeader_Fragment();
+        fragment_team_leader_lock = new teamLeader_lock();
         fragment_team_Member = new teamMember_Fragment();
         fragment_home = new home_Fragment();
         fragment_plan = new plan_Fragment();
@@ -38,8 +38,8 @@ public class room extends AppCompatActivity {
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         switch (item.getItemId()) {
 
-                            case R.id.tab_teamLeader:
-                                getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment_team_leader).commit();
+                            case R.id.tab_teamLeader_lock:
+                                getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment_team_leader_lock).commit();
                                 return true;
                             case R.id.tab_teamMember:
                                 getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment_team_Member).commit();

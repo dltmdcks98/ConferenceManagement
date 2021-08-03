@@ -6,7 +6,7 @@
 
     <item
         android:title="팀장"
-        android:id="@+id/tab_teamLeader"
+        android:id="@+id/tab_teamLeader_lock"
         android:enabled="true"
         app:showAsAction="always"
 
