@@ -24,10 +24,8 @@ import static android.widget.SearchView.*;
 public class entry_room extends AppCompatActivity {
     EditText name,searchView;
     Button confirm;
-    SQLiteDatabase sqlDB,sqlDB1;
+    SQLiteDatabase sqlDB;
     roomDB myHelper;
-    entryNameDB nameDB;
-   // SearchView searchView;
 
 
     @Override
@@ -41,7 +39,6 @@ public class entry_room extends AppCompatActivity {
         searchView = (EditText)findViewById(R.id.search);
 
         myHelper = new roomDB(this);
-        nameDB = new entryNameDB(this);
 
         confirm.setOnClickListener(new OnClickListener() {
             @Override
@@ -55,9 +52,8 @@ public class entry_room extends AppCompatActivity {
                     try {
                         String name = null;
                         sqlDB = myHelper.getReadableDatabase();
-
                         Cursor cursor;
-                        cursor = sqlDB.rawQuery("SELECT name FROM roomDB WHERE code = "+ searchView.getText().toString() + ";",null);
+                        cursor = sqlDB.rawQuery("SELECT name FROM roomDB WHERE code = " + searchView.getText().toString() + ";",null);
                         if (cursor != null){
                             while (cursor.moveToNext()){
                                 name = cursor.getString(cursor.getColumnIndex("name"));
@@ -74,24 +70,5 @@ public class entry_room extends AppCompatActivity {
 
             }
         });
-
-
-//https://stackoverflow.com/questions/33849446/searchview-show-result-from-database-to-listview -> DB랑 searchview연결하는거
-
-//        searchView.setOnQueryTextFocusChangeListener(new SearchView.OnQueryTextListener(){
-//
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//
-//                return true;
-//            }
-//
-//        });
-
     }
 }
