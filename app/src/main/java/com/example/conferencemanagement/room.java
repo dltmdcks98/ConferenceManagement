@@ -1,5 +1,6 @@
 package com.example.conferencemanagement;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -15,7 +16,7 @@ public class room extends AppCompatActivity {
     Fragment fragment_team_Member;
     Fragment fragment_home;
     Fragment fragment_plan;
-    Fragment fragment_calendar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class room extends AppCompatActivity {
         fragment_team_Member = new teamMember_Fragment();
         fragment_home = new home_Fragment();
         fragment_plan = new plan_Fragment();
-        fragment_calendar = new calendar_Fragment();
+
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment_home).commit();
 
@@ -51,7 +52,8 @@ public class room extends AppCompatActivity {
                                 getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment_plan).commit();
                                 return true;
                             case R.id.tab_calendar:
-                                getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment_calendar).commit();
+                                Intent intent = new Intent(getApplicationContext(), Calendar.class);
+                                startActivity(intent);
                                 return true;
                         }
 
