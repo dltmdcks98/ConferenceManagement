@@ -87,7 +87,7 @@
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
-            android:progress="78" />
+             />
 
         <EditText
             android:id="@+id/progress_edit"
