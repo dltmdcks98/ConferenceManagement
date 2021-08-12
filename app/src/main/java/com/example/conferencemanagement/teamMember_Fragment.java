@@ -31,7 +31,8 @@ public class teamMember_Fragment extends Fragment {
     roomDB roomDB;
     TeamDB teamDB;
     entryNameDB nameDB;
-    SQLiteDatabase sql,sql1,sql2;
+    ImageDB imageDB;
+    SQLiteDatabase sql,sql1,sql2,sql3;
 
     @Override
     public void onAttach(Activity activity) {
@@ -39,6 +40,7 @@ public class teamMember_Fragment extends Fragment {
         roomDB = new roomDB(activity);
         teamDB = new TeamDB(activity);
         nameDB = new entryNameDB(activity);
+        imageDB = new ImageDB(activity);
     }
 
 
