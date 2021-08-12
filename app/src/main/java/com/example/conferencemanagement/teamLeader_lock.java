@@ -56,18 +56,21 @@ public class teamLeader_lock extends Fragment {
                             name1 = cursor.getString(0);
                             name2 = cursor.getString(1);
                             name3 = cursor.getString(2);
+
                         }
+                        if (edit_teamLeader_password.getText().toString().equals(name3)) {
+                            FragmentTransaction transaction1 = getActivity().getSupportFragmentManager().beginTransaction();
+                            teamLeader_Fragment teamLeader_fragment = new teamLeader_Fragment();
+                            transaction1.replace(R.id.container, teamLeader_fragment);
+                            transaction1.commit();
+                            Toast.makeText(getActivity(), "확인되었습니다.", Toast.LENGTH_SHORT).show();
+                            edit_teamLeader_password.setText(null);
+                        } else {
+                            Toast.makeText(getActivity(), "존재하지 않는 방입니다.", Toast.LENGTH_SHORT).show();
+                        }
+
                     }
-                    if (edit_teamLeader_password.getText().toString().equals(name3)) {
-                        FragmentTransaction transaction1 = getActivity().getSupportFragmentManager().beginTransaction();
-                        teamLeader_Fragment teamLeader_fragment = new teamLeader_Fragment();
-                        transaction1.replace(R.id.container, teamLeader_fragment);
-                        transaction1.commit();
-                        Toast.makeText(getActivity(), "확인되었습니다.", Toast.LENGTH_SHORT).show();
-                        edit_teamLeader_password.setText(null);
-                    } else {
-                        Toast.makeText(getActivity(), "존재하지 않는 방입니다.", Toast.LENGTH_SHORT).show();
-                    }
+
 
 
                 }
