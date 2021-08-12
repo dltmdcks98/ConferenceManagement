@@ -19,12 +19,14 @@ public class teamLeader_Fragment extends Fragment {
     TextView text_profile_1_name, text_profile_2_name, text_profile_3_name, text_profile_4_name;
     TextView text_profile_1_limit, text_profile_2_limit, text_profile_3_limit, text_profile_4_limit;
     TestDB testDB;
-    SQLiteDatabase sql;
+    TeamDB teamDB;
+    SQLiteDatabase sql, sql2;
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         testDB = new TestDB(activity);
+        teamDB = new TeamDB(activity);
     }
 
     @Override
@@ -59,15 +61,29 @@ public class teamLeader_Fragment extends Fragment {
             }
         }
 
+        sql2 = teamDB.getReadableDatabase();
+        Cursor cursor1;
+        String limit_1 = null; // , limit_2 = null, limit_3 = null, limit_4 = null;
+
+        cursor1 = sql2.rawQuery("SELECT limitation FROM team;",null);
+        if(cursor1 != null){
+            while (cursor1.moveToNext()) {
+                limit_1 = cursor1.getString(0);
+            }
+        }
 
         text_profile_1_name.setText(name1);
         text_profile_2_name.setText(name2);
         text_profile_3_name.setText(name3);
         text_profile_4_name.setText(name4);
 
+        text_profile_1_limit.setText(limit_1);
+
 
         cursor.close();
+        cursor1.close();
         sql.close();
+        sql2.close();
 
 
 
