@@ -92,7 +92,6 @@ public class plan_Fragment extends Fragment {
                         secondDate = cursor_plan.getString(5);
                         thirdDate = cursor_plan.getString(6);
                         fourthDate = cursor_plan.getString(7);
-
                     }
 
                 }
