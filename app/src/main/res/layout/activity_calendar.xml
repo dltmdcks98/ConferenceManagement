@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".calendar_Fragment">
+    tools:context=".Calendar">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -154,6 +155,11 @@
         <Button
             android:text="저장"
             android:id="@+id/btnsave"
+            android:fontFamily="@font/tway_air"
+            android:background="@drawable/button_design"
+            android:backgroundTint="#C9CDF1"
+            app:backgroundTint ="@null"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <LinearLayout
@@ -164,12 +170,22 @@
             <Button
                 android:text="수정"
                 android:id="@+id/btncha"
+                android:fontFamily="@font/tway_air"
+                android:background="@drawable/button_design"
+                android:backgroundTint="#C9CDF1"
+                app:backgroundTint ="@null"
+                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"/>
             <Button
                 android:text="삭제"
                 android:id="@+id/btndel"
+                android:fontFamily="@font/tway_air"
+                android:background="@drawable/button_design"
+                android:backgroundTint="#C9CDF1"
+                app:backgroundTint ="@null"
+                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"/>
@@ -177,6 +193,11 @@
         <Button
             android:text="뒤로가기"
             android:id="@+id/btnback"
+            android:fontFamily="@font/tway_air"
+            android:background="@drawable/button_design"
+            android:backgroundTint="#C9CDF1"
+            app:backgroundTint ="@null"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></Button>
         <LinearLayout
