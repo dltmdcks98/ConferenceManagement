@@ -47,25 +47,28 @@ public class entry_room extends AppCompatActivity {
                     Toast.makeText(entry_room.this,"코드를 입력해주세요",Toast.LENGTH_SHORT).show();
                 }else if(name.getText().toString().equals("")){
                     Toast.makeText(entry_room.this,"닉네임을 입력해주세요",Toast.LENGTH_SHORT).show();
-                }else{
-
-                    try {
-                        String name = null;
-                        sqlDB = myHelper.getReadableDatabase();
-                        Cursor cursor;
-                        cursor = sqlDB.rawQuery("SELECT name FROM roomDB WHERE code = " + searchView.getText().toString() + ";",null);
-                        if (cursor != null){
-                            while (cursor.moveToNext()){
-                                name = cursor.getString(cursor.getColumnIndex("name"));
-                            }
+                }else
+                {
+                    String code = null;
+                    String name = null;
+                    sqlDB = myHelper.getReadableDatabase();
+                    Cursor cursor;
+                    cursor = sqlDB.rawQuery("SELECT code FROM roomDB WHERE code = " +searchView.getText().toString() +";",null);
+                    if (cursor != null){
+                        while (cursor.moveToNext()){
+                            code = cursor.getString(cursor.getColumnIndex("code"));
                         }
-                        Toast.makeText(entry_room.this,name,Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(),room.class);
-                        startActivity(intent);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        Toast.makeText(entry_room.this,"존재하지 않는 방입니다",Toast.LENGTH_SHORT).show();
+                        if(searchView.getText().toString().equals(code)){
+
+                            Toast.makeText(entry_room.this,searchView.getText().toString()+"로 입장하셨습니다.",Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getApplicationContext(),room.class);
+                            startActivity(intent);
+                        }
+                        else{
+                            Toast.makeText(entry_room.this,"해당 코드와 일치하는 방이 없습니다.",Toast.LENGTH_SHORT).show();
+                        }
                     }
+
                 }
 
             }
