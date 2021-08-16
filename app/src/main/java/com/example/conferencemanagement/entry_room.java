@@ -27,7 +27,7 @@ public class entry_room extends AppCompatActivity {
     SQLiteDatabase sqlDB;
     roomDB myHelper;
 
-
+//210816test
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
