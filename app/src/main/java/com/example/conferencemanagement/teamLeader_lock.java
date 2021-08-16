@@ -66,7 +66,7 @@ public class teamLeader_lock extends Fragment {
                             Toast.makeText(getActivity(), "확인되었습니다.", Toast.LENGTH_SHORT).show();
                             edit_teamLeader_password.setText(null);
                         } else {
-                            Toast.makeText(getActivity(), "존재하지 않는 방입니다.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
                         }
 
                     }

@@ -111,7 +111,7 @@ public class teamMember_Fragment extends Fragment {
         editExplain.setText(edit3);
         if(edit2 !=null){
         progressBar.setProgress(Integer.parseInt(edit2));}
-        else{progressBar.setProgress(78);}
+        else{progressBar.setProgress(0);}
         name.setText(Username);
 
         btnSave.setOnClickListener(new View.OnClickListener() {

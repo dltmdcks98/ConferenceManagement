@@ -50,7 +50,6 @@ public class entry_room extends AppCompatActivity {
                 }else
                 {
                     String code = null;
-                    String name = null;
                     sqlDB = myHelper.getReadableDatabase();
                     Cursor cursor;
                     cursor = sqlDB.rawQuery("SELECT code FROM roomDB WHERE code = " +searchView.getText().toString() +";",null);
@@ -60,7 +59,7 @@ public class entry_room extends AppCompatActivity {
                         }
                         if(searchView.getText().toString().equals(code)){
 
-                            Toast.makeText(entry_room.this,searchView.getText().toString()+"로 입장하셨습니다.",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(entry_room.this,name.getText().toString()+"로 입장하셨습니다.",Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getApplicationContext(),room.class);
                             startActivity(intent);
                         }
